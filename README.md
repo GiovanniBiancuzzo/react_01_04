@@ -1,3 +1,22 @@
+Crea un componente chiamato WarningSign che riceva una stringa dalle prop.
+
+Questo testo dovrà essere visualizzato all’interno di un componente Alert di react-bootstrap di tipo danger.
+
+Crea un componente chiamato MyBadge che riceva sia una stringa di testo che un colore come prop.
+
+Questo componente dovrà renderizzare un componente Badge con quelle proprietà.
+
+Crea un componente SingleBook e questa volta dovrà essere un componente creato a funzione. Il componente riceve un oggetto corrispondente ad un singolo libro come prop, e visualizzerà la sua copertina e il titolo del libro.
+
+Usa le Card di react-bootstrap per renderizzare il libro (l’oggetto del libro può esser letto da un file .json che hai ricevuto ieri).
+
+Crea un componente BookList. Questo componente riceverà dalle prop una lista di libri da visualizzare utilizzando il componente SingleBook.
+
+Crea una funzione filterBookList. Scrivendo una stringa di ricerca dentro un campo input, il componente BookList dovrà renderizzare solo i libri contenente la stringa cercata come titolo del libro (suggerimento: salva la stringa di ricerca dentro allo stato del componente BookList e filtra i libri di conseguenza).
+
+Converti il tuo componente SingleBook in una classe, e crea il suo stato contenente una proprietà booleana selected.
+Cliccare sul SingleBook dovrà fare il toggle della proprietà selected. Se la proprietà selected sarà true, il SingleBook dovrà ricevere dello stile che rifletta il cambio di stato, visivamente.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
