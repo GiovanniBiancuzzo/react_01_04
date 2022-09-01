@@ -36,7 +36,7 @@ class CommentsList extends Component {
                 {this.state.comments.map((comment) => {
                     return (
                         <SingleComment
-                            key={comment.asin}
+                            key={comment._id}
                             commentElement={comment}
                         />
                     );
