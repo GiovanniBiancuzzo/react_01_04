@@ -32,6 +32,9 @@ class SingleBook extends Component {
                         <Card.Text>
                             <b>Genere</b>: {this.props.book.category}
                         </Card.Text>
+                        <Card.Text>
+                            <b>ASIN</b>: {this.props.book.asin}
+                        </Card.Text>
                         <Button
                             variant="primary"
                             onClick={() =>

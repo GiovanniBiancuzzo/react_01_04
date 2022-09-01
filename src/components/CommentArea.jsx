@@ -15,7 +15,7 @@ class CommentArea extends Component {
     render() {
         return (
             <>
-                <AddComment addComment={this.props.asinComment} />
+                <AddComment comment={this.props.asinComment} />
                 <CommentsList commentsList={this.props.asinComment} />
             </>
         );

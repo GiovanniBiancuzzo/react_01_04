@@ -5,19 +5,19 @@ import { Button, Form } from "react-bootstrap";
 
 class AddComment extends Component {
     state = {
-        commentElement: {
-            comment: "",
-            rate: "",
-            elementId: this.props.AddComment,
-        },
+        comment: "",
+        rate: "",
+        elementId: this.props.comment,
     };
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log("Invio prenotazione", e);
+        console.log(e);
+        console.log("Invio prenotazione");
+        console.log(this.state);
         fetch("https://striveschool-api.herokuapp.com/api/comments", {
             method: "POST",
-            body: JSON.stringify(this.state.commentElement),
+            body: JSON.stringify(this.state),
             headers: {
                 "Content-Type": "application/json",
                 Authorization:
@@ -28,28 +28,22 @@ class AddComment extends Component {
                 if (res.ok) {
                     alert("Commento inviato correttamente");
                     this.setState({
-                        commentElement: {
-                            comment: "",
-                            rate: "",
-                        },
+                        comment: "",
+                        rate: "",
                     });
                 } else {
                     alert("Errore nell'invio del commento");
                     this.setState({
-                        commentElement: {
-                            comment: "",
-                            rate: "",
-                        },
+                        comment: "",
+                        rate: "",
                     });
                 }
             })
             .catch((error) => {
                 console.log("Qualcosa è andato storto", error);
                 this.setState({
-                    commentElement: {
-                        comment: "",
-                        rate: "",
-                    },
+                    comment: "",
+                    rate: "",
                 });
             });
     }
@@ -62,12 +56,11 @@ class AddComment extends Component {
                         as="textarea"
                         rows={3}
                         placeholder="Aggungi un commento"
-                        value={this.state.commentElement.comment}
+                        value={this.state.comment}
                         onChange={(e) => {
                             this.setState({
-                                commentElement: {
-                                    comment: e.target.value,
-                                },
+                                comment: e.target.value,
+                                // elementId: this.props.comment,
                             });
                         }}
                     />
@@ -77,12 +70,11 @@ class AddComment extends Component {
                     <Form.Label>Vota</Form.Label>
                     <Form.Control
                         as="select"
-                        value={this.state.commentElement.rate}
+                        value={this.state.rate}
                         onChange={(e) => {
                             this.setState({
-                                commentElement: {
-                                    rate: e.target.value,
-                                },
+                                rate: e.target.value,
+                                // elementId: this.props.comment,
                             });
                         }}
                     >
@@ -93,7 +85,6 @@ class AddComment extends Component {
                         <option>5⭐⭐⭐⭐⭐</option>
                     </Form.Control>
                 </Form.Group>
-
                 <Button variant="success" type="submit">
                     Invia commento
                 </Button>

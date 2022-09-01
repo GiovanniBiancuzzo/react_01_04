@@ -5,17 +5,14 @@ class SingleComment extends Component {
     state = {};
     render() {
         return (
-            <>
-                <p>
-                    Voto:{" "}
-                    <Badge variant="warning">
-                        {this.props.commentElement.rate}
-                    </Badge>
-                </p>
-                <ListGroup.Item>
-                    {this.props.commentElement.comment}
-                </ListGroup.Item>
-            </>
+            <ListGroup.Item>
+                Voto:{" "}
+                <Badge variant="warning">
+                    {this.props.commentElement.rate}
+                </Badge>
+                <br></br>
+                {this.props.commentElement.comment}
+            </ListGroup.Item>
         );
     }
 }
