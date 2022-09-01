@@ -30,7 +30,7 @@ class CommentsList extends Component {
     }
 
     componentDidMount() {
-        this.fetchComments();
+        this.fetchComments(this.props.commentsList);
     }
 
     render() {

@@ -8,7 +8,7 @@ class AddComment extends Component {
         commentElement: {
             comment: "",
             rate: "",
-            elementId: "",
+            elementId: this.props.AddComment,
         },
     };
 
@@ -31,14 +31,27 @@ class AddComment extends Component {
                         commentElement: {
                             comment: "",
                             rate: "",
-                            elementId: "",
                         },
                     });
                 } else {
                     alert("Errore nell'invio del commento");
+                    this.setState({
+                        commentElement: {
+                            comment: "",
+                            rate: "",
+                        },
+                    });
                 }
             })
-            .catch((error) => console.log("Qualcosa è andato storto", error));
+            .catch((error) => {
+                console.log("Qualcosa è andato storto", error);
+                this.setState({
+                    commentElement: {
+                        comment: "",
+                        rate: "",
+                    },
+                });
+            });
     }
 
     render() {

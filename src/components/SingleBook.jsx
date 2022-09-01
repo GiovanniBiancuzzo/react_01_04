@@ -57,7 +57,7 @@ class SingleBook extends Component {
                         </Button>
                     </Card.Body>
                 </Card>
-                <CommentArea commentsList={this.props.book.asin} />
+                <CommentArea asinComment={this.props.book.asin} />
             </Container>
         );
     }
