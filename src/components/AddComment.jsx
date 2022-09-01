@@ -10,11 +10,9 @@ class AddComment extends Component {
         elementId: this.props.comment,
     };
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
         console.log("Invio prenotazione");
-        console.log(this.state);
         fetch("https://striveschool-api.herokuapp.com/api/comments", {
             method: "POST",
             body: JSON.stringify(this.state),
@@ -33,20 +31,12 @@ class AddComment extends Component {
                     });
                 } else {
                     alert("Errore nell'invio del commento");
-                    this.setState({
-                        comment: "",
-                        rate: "",
-                    });
                 }
             })
             .catch((error) => {
                 console.log("Qualcosa è andato storto", error);
-                this.setState({
-                    comment: "",
-                    rate: "",
-                });
             });
-    }
+    };
 
     render() {
         return (
@@ -78,11 +68,11 @@ class AddComment extends Component {
                             });
                         }}
                     >
-                        <option>1⭐</option>
-                        <option>2⭐⭐</option>
-                        <option>3⭐⭐⭐</option>
-                        <option>4⭐⭐⭐⭐</option>
-                        <option>5⭐⭐⭐⭐⭐</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                     </Form.Control>
                 </Form.Group>
                 <Button variant="success" type="submit">
