@@ -1,21 +1,16 @@
-Crea un componente chiamato WarningSign che riceva una stringa dalle prop.
+Aggiungi un componente CommentArea alla fine del tuo SingleBook. Quando l’untente cliccherà su un SingleBook, i commenti dovranno apparire (suggerimento: short-circuit operator!).
 
-Questo testo dovrà essere visualizzato all’interno di un componente Alert di react-bootstrap di tipo danger.
+CommentArea dovrà fare il fetch dei dati e salvare i commenti del libro selezionato. Conterrà inoltre due sotto-componenti: CommentsList and AddComment.
 
-Crea un componente chiamato MyBadge che riceva sia una stringa di testo che un colore come prop.
+CommentsList avrà all’interno una lista di commenti riguardo il libro selezionato, l’array di commenti verrà passato come prop dal componente CommentArea. Ogni commento sarà sempre un componente SingleComment.
 
-Questo componente dovrà renderizzare un componente Badge con quelle proprietà.
+AddComment contiene un form per aggiungere il testo del commento e il voto(da 1 o a 5). Questo componente dovrà permettere all’utente di fare la POST del nuovo commento sul libro selezionato.[EXTRA]
 
-Crea un componente SingleBook e questa volta dovrà essere un componente creato a funzione. Il componente riceve un oggetto corrispondente ad un singolo libro come prop, e visualizzerà la sua copertina e il titolo del libro.
+Aggiungi vicino ogni commento un bottone per cancellarlo (DELETE). Dovrà creare una richiesta verso https://striveschool-api.herokuapp.com/api/comments/:commentId
 
-Usa le Card di react-bootstrap per renderizzare il libro (l’oggetto del libro può esser letto da un file .json che hai ricevuto ieri).
+Crea un componente Loading. Questo apparirà nella pagina quando la richiesta è in fase di risoluzione, ma non ancora risolta.
 
-Crea un componente BookList. Questo componente riceverà dalle prop una lista di libri da visualizzare utilizzando il componente SingleBook.
-
-Crea una funzione filterBookList. Scrivendo una stringa di ricerca dentro un campo input, il componente BookList dovrà renderizzare solo i libri contenente la stringa cercata come titolo del libro (suggerimento: salva la stringa di ricerca dentro allo stato del componente BookList e filtra i libri di conseguenza).
-
-Converti il tuo componente SingleBook in una classe, e crea il suo stato contenente una proprietà booleana selected.
-Cliccare sul SingleBook dovrà fare il toggle della proprietà selected. Se la proprietà selected sarà true, il SingleBook dovrà ricevere dello stile che rifletta il cambio di stato, visivamente.
+Crea un componente Error. Se qualcosa andrà male con una network request, dovrà apparire un messaggio di errore.
 
 # Getting Started with Create React App
 
