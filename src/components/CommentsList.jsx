@@ -17,9 +17,7 @@ class CommentsList extends Component {
                     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwYTZlN2VkZDY3ODAwMTUwN2Q3NDQiLCJpYXQiOjE2NjIwMzU2ODcsImV4cCI6MTY2MzI0NTI4N30.Jdt46faBQ3TI1LhM97_vn-rp35fLjIBwYaQ8QCw8-Zw",
             },
         })
-            .then((res) => {
-                res = res.json();
-            })
+            .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 this.setState({

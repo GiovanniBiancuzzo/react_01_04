@@ -10,6 +10,7 @@ import CommentArea from "./CommentArea";
 class SingleBook extends Component {
     state = {
         selected: false,
+        commentsButton: false,
     };
 
     render() {
@@ -45,19 +46,21 @@ class SingleBook extends Component {
                         </Button>
                         <Button
                             variant="warning"
-                            // onClick={() =>
-                            //     this.setState({
-                            //         selected: this.state.selected
-                            //             ? false
-                            //             : true,
-                            //     })
-                            // }
+                            onClick={() =>
+                                this.setState({
+                                    commentsButton: this.state.commentsButton
+                                        ? false
+                                        : true,
+                                })
+                            }
                         >
                             Commenti
                         </Button>
                     </Card.Body>
                 </Card>
-                <CommentArea asinComment={this.props.book.asin} />
+                {this.state.commentsButton && ( //quando il pulsante commenti è cliccato
+                    <CommentArea asinComment={this.props.book.asin} />
+                )}
             </Container>
         );
     }
